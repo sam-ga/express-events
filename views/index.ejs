@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events App</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+  <%- include('./partials/_nav') %>
+  <main>
+    <section class="centred">
+      <% if (user) { %>
+        <h1>Welcome to the Events app, <%= user.username %>!</h1>
+      <% } else { %>
+        <h1>Welcome to the Events app!</h1>
+      <% } %>
+      <p>An app for finding events to attend.</p>
+      <p><a class="btn" href="/events">Browse Events</a></p>
+
+      <% if (user) { %>
+        <p>
+          <a class="link" href="/auth/sign-out">Sign out</a>
+        </p>
+      <% } else { %>
+        <p>
+          <a class="link" href="/auth/sign-up">Sign up</a> or <a class="link" href="/auth/sign-in">Sign in</a>
+        </p>
+      <% } %>
+    </section>
+  </main>
+</body>
+</html>

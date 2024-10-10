@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events Index</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+  </head>
+  <body>
+    <%- include('../partials/_nav') %>
+    <main>
+      <h1>All Events</h1>
+      <% if (message) { %>
+        <p><small class="success"><%= message %></small></p>
+      <% } %>
+      <ul>
+        <% events.forEach(event => { %>
+          <li>
+            <a class="event-item" href="/events/<%=event._id%>"><%= event.name %></a>
+          </li>
+        <% }) %>
+      </ul>
+      <a class="btn" href="/events/new">Add New Event</a>
+    </main>
+  </body>
+</html>

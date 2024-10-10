@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>Create a Event</title>
+  </head>
+  <body>
+    <%- include('../partials/_nav') %>
+    <main>
+      <h1>Create a New Event!</h1>
+      <% if (errorMessage) { %>
+        <p><small class="error"><%= errorMessage %></small></p>
+      <% } %>
+      <form class="form" action="/events" method="POST" enctype="multipart/form-data">
+        
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" value="<%= fieldValues.name %>" required/>
+        <% if (errors.name) { %>
+          <p><small class="error"><%= errors.name.message %></small></p>
+        <% } %>
+    
+        <label for="description">Description:</label>
+        <textarea name="description" id="description" required><%= fieldValues.description %></textarea>
+        <% if (errors.description) { %>
+          <p><small class="error"><%= errors.description.message %></small></p>
+        <% } %>
+
+        <label for="location">Location:</label>
+        <input type="text" name="location" id="location" value="<%= fieldValues.location %>" required>
+        <% if (errors.location) { %>
+          <p><small class="error"><%= errors.location.message %></small></p>
+        <% } %>
+
+        <label for="date">Date:</label>
+        <input type="date" name="date" id="date" value="<%= fieldValues.date %>" required>
+        <% if (errors.date) { %>
+          <p><small class="error"><%= errors.date.message %></small></p>
+        <% } %>
+
+        <label for="images">Images:</label>
+        <input type="file" name="images" id="images" accept="image/*" multiple>
+    
+        <button class="btn" type="submit">Create Event</button>
+      </form>
+      <a class="link" href="/events">Back to Events</a>
+    </main>
+  </body>
+</html>

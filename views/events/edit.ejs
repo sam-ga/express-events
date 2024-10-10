@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>Edit an Event</title>
+  </head>
+  <body>
+    <%- include('../partials/_nav') %>
+    <main>
+      <h1>Edit an Event!</h1>
+      <form class="form" action="/events/<%= event._id %>?_method=PUT" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" value="<%= event.name %>" />
+    
+        <label for="description">Description:</label>
+        <textarea name="description" id="description"><%= event.description %></textarea>
+
+        <label for="location">Location:</label>
+        <input type="text" name="location" id="location" value="<%= event.location %>">
+
+        <label for="date">Date:</label>
+        <input type="date" name="date" id="date" value="<%= new Date(event.date).toISOString().slice(0, 10) %>">
+    
+        <button class="btn" type="submit">Edit Event</button>
+      </form>
+      <a class="link" href="/events">Back to Events</a>
+    </main>
+  </body>
+</html>

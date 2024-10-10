@@ -1,0 +1,14 @@
+<header>
+  <a href="/"><img src="/images/logo.png" alt="Event App Logo"></a>
+  <nav>
+    <a class="link" href="/events">View all events</a>
+    <% if (user) { %>
+      <a class="link" href="/auth/profile">Profile</a>
+      <a class="link" href="/events/new">Create event</a>
+      <a class="link" href="/auth/sign-out">Sign Out</a>
+    <% } else { %>
+      <a class="link" href="/auth/sign-up">Sign Up</a>
+      <a class="link" href="/auth/sign-in">Sign In</a>
+    <% } %>
+  </nav>
+</header>
