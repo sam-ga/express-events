@@ -74,13 +74,12 @@ const startServers = async () => {
   try {
     // Database Connection
     await mongoose.connect(process.env.MONGODB_URI)
-
     console.log('🔒 Database connection established')
   } catch (error) {
     console.log(error)
   }
 }
 
-startServers().then(() => {
-  module.exports.handler = serverless(app)
-})
+startServers()
+
+module.exports.handler = serverless(app)
