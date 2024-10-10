@@ -4,11 +4,6 @@
   included_files = ["views/**", "public/**"]
 
 [[redirects]]
-  from = "/images/*"
-  to = "/images/:splat"
-  status = 200
-
-[[redirects]]
   force = true
   from = "/*"
   status = 200
