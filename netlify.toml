@@ -6,12 +6,7 @@
 # Allow direct access to static assets
 [[redirects]]
   from = "/images/*"
-  to = "/images/:splat"
-  status = 200
-
-[[redirects]]
-  from = "/stylesheets/*"
-  to = "/stylesheets/:splat"
+  to = "/public/images/:splat"
   status = 200
 
 # Catch-all redirect for API calls
