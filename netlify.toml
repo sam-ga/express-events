@@ -3,8 +3,3 @@
   node_bundler = "esbuild"
   included_files = ["views/**", "public/**"]
 
-[[redirects]]
-  force = true
-  from = "/*"
-  status = 200
-  to = "/.netlify/functions/api/:splat"
